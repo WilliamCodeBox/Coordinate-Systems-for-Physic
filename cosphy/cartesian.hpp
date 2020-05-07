@@ -5,7 +5,7 @@ namespace cosphy {
 class Cartesian {
    public:
     // Unit vectors
-    static const Cartesian Uo;
+    static const Cartesian Uo;  // cosphy::Cartesian::Uo
     static const Cartesian Ux;
     static const Cartesian Uy;
     static const Cartesian Uz;

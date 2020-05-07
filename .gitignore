@@ -34,3 +34,4 @@
 # MacOS
 .vscode
 build
+build-ninja

@@ -37,12 +37,13 @@ Cartesian& Cartesian::operator=(const Cartesian& other) {
     return *this;
 }
 
-bool Cartesian::operator==(const Cartesian& other) {
-    return (mx == other.mx) && (my == other.my) && (mz == other.mz);
+bool Cartesian::operator==(const Cartesian& other) const {
+    return (this->mx == other.mx) && (this->my == other.my) &&
+           (this->mz == other.mz);
 }
 
-bool Cartesian::operator!=(const Cartesian& other) {
-    return this->operator==(other) ? false : true;
+bool Cartesian::operator!=(const Cartesian& other) const {
+    return !operator==(other);
 }
 
 // methods for vector

@@ -33,8 +33,8 @@ class Cartesian {
 
     // operators overloading
     Cartesian& operator=(const Cartesian& other);
-    bool operator!=(const Cartesian& other);
-    bool operator==(const Cartesian& other);
+    bool operator!=(const Cartesian& other) const;
+    bool operator==(const Cartesian& other) const;
 
     /* The following content for vector in physic */
 

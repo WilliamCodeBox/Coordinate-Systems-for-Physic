@@ -1,6 +1,8 @@
 #if !defined(COSPHY_CARTESIAN_H)
 #define COSPHY_CARTESIAN_H
 
+#include <iomanip>
+
 namespace cosphy {
 class Cartesian {
    public:
@@ -25,8 +27,19 @@ class Cartesian {
     void y(const double& y);
     void z(const double& z);
 
+    const double& operator[](uint8_t idx) const;
+    double& operator[](uint8_t idx);
+
     // operators overloading
     Cartesian& operator=(const Cartesian& other);
+
+    /* The following content for vector in physic */
+    double norm() const;
+    double length() const;
+    Cartesian normalized() const;
+
+    double dotProd(const Cartesian& other);       // dot product
+    Cartesian crossProd(const Cartesian& other);  // cross product
 
    private:
     double mx;

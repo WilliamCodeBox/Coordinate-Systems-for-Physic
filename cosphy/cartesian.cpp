@@ -24,6 +24,9 @@ void Cartesian::x(const double& x) { mx = x; }
 void Cartesian::y(const double& y) { my = y; }
 void Cartesian::z(const double& z) { mz = z; }
 
+const double& Cartesian::operator[](uint8_t idx) const { return (&mx)[idx]; }
+double& Cartesian::operator[](uint8_t idx) { return (&mx)[idx]; }
+
 // operators overloading
 Cartesian& Cartesian::operator=(const Cartesian& other) {
     mx = other.mx;

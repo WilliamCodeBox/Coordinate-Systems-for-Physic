@@ -1,5 +1,7 @@
 #include "cartesian.hpp"
 
+#include <cmath>
+
 namespace cosphy {
 
 // Unit vectors
@@ -34,5 +36,11 @@ Cartesian& Cartesian::operator=(const Cartesian& other) {
     mz = other.mz;
     return *this;
 }
+
+double Cartesian::norm(const int& p) const {
+    return pow(pow(mx, p) + pow(my, p) + pow(mz, p), 1.0 / p);
+}
+double Cartesian::length() const { return this->norm(2); }
+Cartesian Cartesian::normalized() const {}
 
 }  // namespace cosphy

@@ -34,7 +34,7 @@ class Cartesian {
     Cartesian& operator=(const Cartesian& other);
 
     /* The following content for vector in physic */
-    double norm() const;
+    double norm(const int& p = 2) const;
     double length() const;
     Cartesian normalized() const;
 

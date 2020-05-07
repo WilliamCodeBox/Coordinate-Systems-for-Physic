@@ -8,8 +8,15 @@ namespace cosphy {
 
 class Sperical {
    public:
+    // Unit Vectors
+    static const Sperical Uo;
+    static const Sperical Ur;
+    static const Sperical Utheta;
+    static const Sperical Uphi;
+
     // Constructors and destructors
-    Sperical(const double& r, const double& theta, const double& phi);
+    Sperical(const double& r = 0.0, const double& theta = 0.0,
+             const double& phi = 0.0);
     Sperical(const Sperical& other);
     ~Sperical() = default;
 

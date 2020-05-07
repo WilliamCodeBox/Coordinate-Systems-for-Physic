@@ -2,6 +2,7 @@
 #define COSPHY_CARTESIAN_H
 
 #include <iomanip>
+#include <iostream>
 
 namespace cosphy {
 class Cartesian {
@@ -50,6 +51,9 @@ class Cartesian {
     friend double operator*(const Cartesian& v1, const Cartesian& v2);
     double dotProd(const Cartesian& other);       // dot product
     Cartesian crossProd(const Cartesian& other);  // cross product
+
+    // iostream
+    friend std::ostream& operator<<(std::ostream& os, const Cartesian& v);
 
    private:
     double mx;

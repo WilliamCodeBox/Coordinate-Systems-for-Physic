@@ -84,4 +84,9 @@ Cartesian Cartesian::crossProd(const Cartesian& other) {
     return crossProdVec;
 }
 
+std::ostream& operator<<(std::ostream& os, const Cartesian& v) {
+    os << "Cartesian: (" << v[0] << ", " << v[1] << ", " << v[2] << ")";
+    return os;
+}
+
 }  // namespace cosphy

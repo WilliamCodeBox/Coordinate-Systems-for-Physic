@@ -1,6 +1,9 @@
 #if !defined(COSPHY_SPERICAL_H)
 #define COSPHY_SPERICAL_H
 
+#include <iomanip>
+#include <iostream>
+
 namespace cosphy {
 
 class Sperical {
@@ -19,19 +22,22 @@ class Sperical {
     void theta(const double& theta);
     void phi(const double& phi);
 
-   private:
-    /*
-        distance between reference point P and original point O, i.e., radius
-     */
+    const double& operator[](uint8_t idx) const;
+    double& operator[](uint8_t idx);
 
+   private:
+    /**
+     * @brief distance between reference point P and original point O,
+     * i.e., radius
+     */
     double mr;
-    /*
-        angle between z axis and the line OP, [0, pi] in radians
+    /**
+     * @brief angle between z axis and the line OP, [0, pi] in radians
      */
     double mtheta;
-    /*
-        angle between x axis and the projection of OP onto xy plane, [-pi,
-        pi] in radians
+    /**
+     * @brief angle between x axis and the projection of OP onto xy plane,
+     * [-pi, pi] in radians
      */
     double mphi;
 };

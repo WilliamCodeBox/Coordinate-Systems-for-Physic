@@ -73,4 +73,15 @@ Cartesian Cartesian::normalized() const {
     return normalizedVec;
 }
 
+double Cartesian::dotProd(const Cartesian& other) {
+    return mx * other.x + my * other.y + mz * other.z;
+}
+Cartesian Cartesian::crossProd(const Cartesian& other) {
+    Cartesian crossProdVec;
+    crossProdVec[0] = my * other.z - mz * other.y;
+    crossProdVec[1] = mz * other.x - mx * other.z;
+    crossProdVec[2] = mx * other.y - my * other.x;
+    return crossProdVec;
+}
+
 }  // namespace cosphy

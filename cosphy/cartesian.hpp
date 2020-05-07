@@ -47,6 +47,7 @@ class Cartesian {
     double length() const;
     Cartesian normalized() const;
 
+    friend double operator*(const Cartesian& v1, const Cartesian& v2);
     double dotProd(const Cartesian& other);       // dot product
     Cartesian crossProd(const Cartesian& other);  // cross product
 

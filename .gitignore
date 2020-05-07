@@ -34,4 +34,3 @@
 # MacOS
 .vscode
 build
-main.cpp

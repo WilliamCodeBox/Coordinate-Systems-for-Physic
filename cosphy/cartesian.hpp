@@ -36,6 +36,13 @@ class Cartesian {
     bool operator==(const Cartesian& other);
 
     /* The following content for vector in physic */
+
+    // scale method
+    Cartesian operator*(const double& a);  // vec * scalar
+    friend Cartesian operator*(const double& a,
+                               const Cartesian& vec);  // scalar * vec
+    Cartesian operator/(const double& a);              // vec / scalar
+
     double norm(const int& p = 2) const;
     double length() const;
     Cartesian normalized() const;

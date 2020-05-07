@@ -45,10 +45,32 @@ bool Cartesian::operator!=(const Cartesian& other) {
     return this->operator==(other) ? false : true;
 }
 
+// methods for vector
+Cartesian Cartesian::operator*(const double& a) {
+    return Cartesian(mx * a, my * a, mz * a);
+}
+Cartesian operator*(const double& a, const Cartesian& vec) {
+    return Cartesian(vec.x() * a, vec.y() * a, vec.z() * a);
+}
+Cartesian Cartesian::operator/(const double& a) {
+    return Cartesian(mx / a, my / a, mz / a);
+}
+
 double Cartesian::norm(const int& p) const {
     return pow(pow(mx, p) + pow(my, p) + pow(mz, p), 1.0 / p);
 }
 double Cartesian::length() const { return this->norm(2); }
-Cartesian Cartesian::normalized() const {}
+Cartesian Cartesian::normalized() const {
+    Cartesian normalizedVec;
+
+    double length = this->length();
+    if (length != 0.0) {
+        normalizedVec.x(mx / length);
+        normalizedVec.y(my / length);
+        normalizedVec.z(mz / length);
+    }
+
+    return normalizedVec;
+}
 
 }  // namespace cosphy

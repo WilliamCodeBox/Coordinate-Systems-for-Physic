@@ -32,6 +32,8 @@ class Cartesian {
 
     // operators overloading
     Cartesian& operator=(const Cartesian& other);
+    bool operator!=(const Cartesian& other);
+    bool operator==(const Cartesian& other);
 
     /* The following content for vector in physic */
     double norm(const int& p = 2) const;

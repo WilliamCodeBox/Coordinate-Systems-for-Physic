@@ -37,6 +37,14 @@ Cartesian& Cartesian::operator=(const Cartesian& other) {
     return *this;
 }
 
+bool Cartesian::operator==(const Cartesian& other) {
+    return (mx == other.mx) && (my == other.my) && (mz == other.mz);
+}
+
+bool Cartesian::operator!=(const Cartesian& other) {
+    return this->operator==(other) ? false : true;
+}
+
 double Cartesian::norm(const int& p) const {
     return pow(pow(mx, p) + pow(my, p) + pow(mz, p), 1.0 / p);
 }

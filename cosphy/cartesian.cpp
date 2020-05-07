@@ -74,13 +74,13 @@ Cartesian Cartesian::normalized() const {
 }
 
 double Cartesian::dotProd(const Cartesian& other) {
-    return mx * other.x + my * other.y + mz * other.z;
+    return mx * other[0] + my * other[1] + mz * other[2];
 }
 Cartesian Cartesian::crossProd(const Cartesian& other) {
     Cartesian crossProdVec;
-    crossProdVec[0] = my * other.z - mz * other.y;
-    crossProdVec[1] = mz * other.x - mx * other.z;
-    crossProdVec[2] = mx * other.y - my * other.x;
+    crossProdVec[0] = my * other.z() - mz * other.y();
+    crossProdVec[1] = mz * other.x() - mx * other.z();
+    crossProdVec[2] = mx * other.y() - my * other.x();
     return crossProdVec;
 }
 

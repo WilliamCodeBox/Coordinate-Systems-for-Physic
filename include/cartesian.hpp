@@ -14,8 +14,22 @@ class Cartesian {
     static const Cartesian Uz;
 
     // Constructors and destructors
+
+    /**
+     * @brief Construct a new Cartesian object
+     *
+     * @param x coordinate on x axis
+     * @param y coordinate on y axis
+     * @param z coordinate on z axis
+     */
     Cartesian(const double& x = 0.0, const double& y = 0.0,
               const double& z = 0.0);
+
+    /**
+     * @brief Construct a new Cartesian object
+     *
+     * @param other an existing Cartesian object
+     */
     Cartesian(const Cartesian& other);
     ~Cartesian() = default;
 
@@ -28,7 +42,19 @@ class Cartesian {
     void y(const double& y);
     void z(const double& z);
 
+    /**
+     * @brief const reference of member variable
+     *
+     * @param idx the index of member variable, 0 for x, 1 for y, and 2 for z
+     * @return const double&
+     */
     const double& operator[](uint8_t idx) const;
+    /**
+     * @brief reference of member variable
+     *
+     * @param idx the index of member variable, 0 for x, 1 for y, and 2 for z
+     * @return double&
+     */
     double& operator[](uint8_t idx);
 
     // operators overloading
@@ -39,7 +65,20 @@ class Cartesian {
     /* The following content for vector in physic */
 
     // scale method
+    /**
+     * @brief operator overloading for Vector multiplying a scalar
+     *
+     * @param a scalar
+     * @return Cartesian
+     */
     Cartesian operator*(const double& a);  // vec * scalar
+    /**
+     * @brief Friend operator overloading for scalar multilying a Vector
+     *
+     * @param a scalar
+     * @param vec Vector
+     * @return Cartesian
+     */
     friend Cartesian operator*(const double& a,
                                const Cartesian& vec);  // scalar * vec
     Cartesian operator/(const double& a);              // vec / scalar

@@ -35,3 +35,7 @@
 .vscode
 build
 build-ninja
+docs/source
+docs/build/doctrees
+docs/make.bat
+docs/Makefile
